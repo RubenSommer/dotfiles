@@ -1,0 +1,9 @@
+#statusbar loop
+while true; do
+   xsetroot -name "$(cat /sys/class/power_supply/BAT0/capacity) % | $( date +"
+%F %R" )"
+   sleep 1m    # Update time every minute
+done &
+blueman-applet &
+clipmenud &
+Exec dwm
